@@ -8,8 +8,9 @@ const express = require('express');
 const methodOverride = require('method-override');
 const mongoose = require ('mongoose');
 const app = express();
-
 const db = mongoose.connection;
+const mongoURI = process.env.MONGODB_URI
+const teams = require("./models/mlb.js")
 //___________________
 //Port
 //___________________
@@ -48,13 +49,58 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 
+//ROUTES / CONTROLLERS
+//SEED
+
+
+//INDEX
+app.get("/teams", (req, res)=>{
+  teams.find({}, (error, allTeams)=>{
+    res.render("index.ejs", {
+      teams: allTeams,
+    });
+  });
+});
+
+//NEW
+app.get("/teams", (req, res)=>{
+  res.render("new.ejs");
+});
+
+//DELETE
+app.delete("/:id", (req, res)=>{
+  teams.findByIdAndDelete(req.params.id, (err, data)=>{
+    res.redirect("/teams")
+  })
+})
+
+//UPDATE
+app.put("/:id", (req, res)=>{
+  teams.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    {
+      new: true,
+    },
+    (error, updatedTeams)=>{
+      res.redirect(`/teams/${req.params.id}`)
+    }
+  )
+})
+
+//CREATE
+
+//EDIT
+
+//SHOW
+
 //___________________
 // Routes
 //___________________
 //localhost:3000
-app.get('/' , (req, res) => {
-  res.send('Hello World!');
-});
+// app.get('/' , (req, res) => {
+//   res.send('Hello World!');
+// });
 
 //___________________
 //Listener
