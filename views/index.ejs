@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLB Teams Index</title>
+</head>
+<body>
+    <nav>
+        <a href="/teams/new">Add a Team</a>
+    </nav>
+    <h1>MLB Teams</h1>
+    <!--FIGURE OUT HOW TO SEPERATE DIVS BY AL/NL-->
+    <ul>
+        <% teams.forEach(teams=> {%>
+            <li>
+                <a href="/teams/._id%>"><img src="<%=teams.img%>"></a>
+                <form action="/teams/<%=teams.id%>?_method=DELETE" method="POST">
+                    <input type="submit" value="DELETE" />
+                </form>
+            </li>
+            <% }) %>
+    </ul>
+</body>
+</html>

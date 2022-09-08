@@ -63,7 +63,7 @@ app.get("/teams", (req, res)=>{
 });
 
 //NEW
-app.get("/teams", (req, res)=>{
+app.get("/teams/new", (req, res)=>{
   res.render("new.ejs");
 });
 
@@ -89,10 +89,29 @@ app.put("/:id", (req, res)=>{
 })
 
 //CREATE
+app.post("/teams", (req, res)=>{
+  teams.create(req.body, (error, createdTeam)=>{
+    res.redirect("/teams")
+  })
+})
 
 //EDIT
+app.get("/:id/edit", (req, res)=>{
+  teams.findById(req.params.id, (error, foundTeam)=>{
+    res.render("edit.ejs", {
+      team: foundTeam,
+    })
+  })
+})
 
 //SHOW
+app.get("/:id", (req, res)=>{
+  teams.findById(req.params.id, (err, foundTeam)=>{
+    res.render("show.ejs", {
+      team: foundTeams,
+    })
+  })
+})
 
 //___________________
 // Routes
