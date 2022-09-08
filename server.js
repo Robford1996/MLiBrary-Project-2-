@@ -68,14 +68,14 @@ app.get("/teams/new", (req, res)=>{
 });
 
 //DELETE
-app.delete("/:id", (req, res)=>{
+app.delete("teams/:id", (req, res)=>{
   teams.findByIdAndDelete(req.params.id, (err, data)=>{
     res.redirect("/teams")
   })
 })
 
 //UPDATE
-app.put("/:id", (req, res)=>{
+app.put("teams/:id", (req, res)=>{
   teams.findByIdAndUpdate(
     req.params.id,
     req.body,
@@ -96,7 +96,7 @@ app.post("/teams", (req, res)=>{
 })
 
 //EDIT
-app.get("/:id/edit", (req, res)=>{
+app.get("teams/:id/edit", (req, res)=>{
   teams.findById(req.params.id, (error, foundTeam)=>{
     res.render("edit.ejs", {
       team: foundTeam,
@@ -105,7 +105,7 @@ app.get("/:id/edit", (req, res)=>{
 })
 
 //SHOW
-app.get("/:id", (req, res)=>{
+app.get("teams/:id", (req, res)=>{
   teams.findById(req.params.id, (err, foundTeam)=>{
     res.render("show.ejs", {
       team: foundTeams,
