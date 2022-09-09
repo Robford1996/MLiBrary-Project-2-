@@ -11,10 +11,11 @@
     <form action="/teams" method="POST">
         Name: <input type="text" name="name" /><br />
         Location: <input type="text" name="location" /><br />
-        Which League?: <input type="radio" name="league" value="AL" /><span>AL</span><input type="radio" name="league" value="NL" /><span>NL</span> <br />
+        Which League?: <input type="text" name="league"/><br />
         Year Founded: <input type="number" name="yearFounded" /><br />
         World Series Wins: <input type="number" name="wsWins" /><br />
         Image: <input type="text" name="img" /><br />
+        <input type="submit" value="Add Team">
     </form>
     <nav>
         <a href="/teams">Back to Teams Page</a>

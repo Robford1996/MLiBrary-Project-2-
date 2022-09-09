@@ -11,7 +11,7 @@
     <form action="/teams/<%=teams._id%>?_method=PUT" method="POST">
         Team Name: <input type="text" name="name" value="<%=teams.name%>" /><br />
         Location: <input type="text" name="location" value="<%=teams.location%>" /><br />
-        Which League?: <input type="radio" name="league" value="AL" /><span>AL</span><input type="radio" name="league" value="NL" /><span>NL</span> <br />
+        Which League?: <input type="text" name="league"/><br />
         Year Founded: <input type="number" name="yearFounded" value="<%=teams.yearFounded%>" /><br />
         World Series Wins: <input type="number" name="wsWins" value="<%=teams.wsWins%>">
         Image: <input type="text" name="img" value="<%=teams.img%>">
