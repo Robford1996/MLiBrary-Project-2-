@@ -1,66 +1,58 @@
 const express = require("express")
-const teamsRouter = express.Router()
-const teams = require("../models/mlb.js")
+const router = express.Router()
+const National = require("../models/national.js")
 
 //INDEX
-teamsRouter.get("/", (req, res)=>{
-    teams.find({}, (error, allTeams)=>{
-      res.render("index.ejs", {
-        teams: allTeams,
-      });
-    });
-  });
-  
-  //NEW
-  teamsRouter.get("/new", (req, res)=>{
-    res.render("new.ejs");
-  });
-  
-  //DELETE
-  teamsRouter.delete("/:id", (req, res)=>{
-    teams.findByIdAndDelete(req.params.id, (err, data)=>{
-      res.redirect("/teams")
+router.get("/", (req, res)=>{
+  National.find({}, (err, foundNationals)=>{
+    res.render("national/index.ejs", {
+      nationals: foundNationals
     })
   })
-  
-  //UPDATE
-  teamsRouter.put("/:id", (req, res)=>{
-    // if(req.body.league ===)
-    teams.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      {
-        new: true,
-      },
-      (error, updatedTeams)=>{
-        res.redirect(`/teams/${req.params.id}`)
-      }
-    )
-  })
-  
-  //CREATE
-  teamsRouter.post("/", (req, res)=>{
-    teams.create(req.body, (error, createdTeam)=>{
-      res.redirect("/teams")
-    })
-  })
-  
-  //EDIT
-  teamsRouter.get("/:id/edit", (req, res)=>{
-    teams.findById(req.params.id, (error, foundTeam)=>{
-      res.render("edit.ejs", {
-        team: foundTeam,
-      })
-    })
-  })
-  
-  //SHOW
-  teamsRouter.get("/:id", (req, res)=>{
-    teams.findById(req.params.id, (err, foundTeam)=>{
-      res.render("show.ejs", {
-        team: foundTeam,
-      })
-    })
-  })
+})
 
-  module.exports = teamsRouter
+//NEW
+router.get("/new", (req, res)=>{
+  res.render("national/new.ejs")
+})
+
+//DELETE
+router.delete("/:id", (req, res)=>{
+  National.findByIdAndDelete(req.params.id, ()=>{
+    res.redirect("/national")
+  })
+})
+
+//UPDATE
+router.put("/:id", (req, res)=>{
+  National.findByIdAndUpdate(req.params.id, ()=>{
+    res.redirect("/national")
+  })
+})
+
+//CREATE
+router.post("/", (req, res)=>{
+  National.create(req.body, (err, createdNational)=>{
+    res.redirect("/national")
+  })
+})
+
+//EDIT
+router.get("/:id/edit", (req, res)=>{
+  National.findById(req.params.id, (err, foundNational)=>{
+    res.render("national/edit.ejs", {
+      national: foundNational
+    })
+  })
+})
+
+//SHOW
+router.get("/:id", (req, res)=>{
+  National.findById(req.params.id, (err, foundNational)=>{
+    res.render("national/show.ejs", {
+      national: foundNational
+    })
+  })
+})
+
+module.exports = router
