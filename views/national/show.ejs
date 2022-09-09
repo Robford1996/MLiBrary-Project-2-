@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National League</title>
+</head>
+<body>
+    <header>
+        <h1><%=national.name%></h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/national">National League Index</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            Team Name: <%=national.name%><br />
+            Location: <=national.location%><br />
+            Eliminated?: <%=national.eliminated%><br />
+            Year Founded: <%=national.yrFounded%><br />
+            World Series Wins: <%=national.wsWins%><br />
+            Image: <img src="<%=national.img%>" />
+        </section>
+        <section>
+            <form action="/national/<%=national.id%>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete Team" />
+            </form>
+        </section>
+        <section>
+            <a href="/national/<%=national._id%>/edit">Edit</a>
+        </section>
+    </main>
+</body>
+</html>

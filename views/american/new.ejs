@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New American League</title>
+</head>
+<body>
+    <header>
+        <h1>Create a Team</h1>
+        <nav>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/american">American League Index</a>
+            </li>
+        </nav>
+    </header>
+    <main>
+        <form action="/american" method="POST">
+            Team Name: <input type="text" name="name" /><br />
+            Location: <input type="text" name="location" /><br />
+            Eliminated? <input type="checkbox" name="eliminated" /><br />
+            Year Founded: <input type="number" name="yrFounded" /><br />
+            World Series Wins: <input type="number" name="wsWins" /><br />
+            Image: <input type="text" name="img" /><br />
+            <input type="submit" value="Add Team">
+        </form>
+    </main>
+</body>
+</html>

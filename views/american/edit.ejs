@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>American League Edit</title>
+</head>
+<body>
+    <header>
+        <h1>Edit <%=american.name%>'s Info</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/american">American League Index</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2><%=american.name%> Attributes</h2>
+        <form action="/american/<%=american_.id%>?_method=PUT" method="POST">
+            Team Name: <input type="text" name="name" value="<%=american.name%>" /><br />
+            Location: <input type="text" name="location" value="<%=american.location%>" /><br />
+            Eliminated?: <input type="checkbox" name="eliminated" value="<%=american.eliminated%>" /><br />
+            Year Founded: <input type="number" name="yrFounded" value="<%=american.yrFounded%>" /><br />
+            World Series Wins: <input type="number" name="wsWins" value="<%=american.weWins%>" /><br />
+            Image: <input type="text" type="img" value="<%=american.img%>" />
+            <input type="submit" value="Submit Changes">
+        </form>
+    </main>
+</body>
+</html>

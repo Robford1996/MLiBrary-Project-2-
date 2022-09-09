@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>American League</title>
+</head>
+<body>
+    <header>
+        <h1><%=american.name%></h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/american">American League Index</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            Team Name: <%=american.name%> <br/>
+            Location: <%=american.location%> <br />
+            Eliminated?: <%=american.eliminated%> <br />
+            Year Founded: <%=american.yrFounded%> <br />
+            World Series Wins: <%=american.wsWins%> <br />
+            Image: <img src="<%=american.img%>" />
+        </section>
+        <section>
+            <form action="/american/<%=american.id%>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete Team" />
+            </form>
+        </section>
+        <section>
+            <a href="/american/<%=american._id%>/edit">Edit</a>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National League Edit</title>
+</head>
+<body>
+    <header>
+        <h1>Edit <%=national.name%></h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/national">National League Index</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="/national/<%=national._id%>?_method=PUT" method="POST">
+           Team Name: <input type="text" name="name" value="<%=national.name%>" /><br />
+           Location: <input type="text" name="location" value="<%=national.location" /><br />
+           Eliminated?: <input type="checkbox" name="eliminated" value="<%=national.eliminated%>"/><br />
+           Year Founded: <input type="number" name="yrFounded" value="<%=national.yrFounded%>" /><br />
+           World Series Wins: <input type="number" name="wsWins" value="<%=national.wsWins%>" /><br />
+           Image: <input type="text" name="img" value="<%=national.img%>" /><br />
+           <input type="submit" value="Submit Changes" />
+        </form>
+    </main>
+</body>
+</html>

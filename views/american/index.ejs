@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLiBrary American League</title>
+</head>
+<body>
+    <header>
+        <h1>American League</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/american/new">Add a New Team</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Teams</h2>
+        <ul>
+            <%for(let i=0; americans.length; i++) { %>
+                <li>
+                    <a href="/american/<%=americans[i]._id"><img src="<%=americans[i].img"></a>
+                </li>
+                <%}%>
+        </ul>
+    </main>
+</body>
+</html>
