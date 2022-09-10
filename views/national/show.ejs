@@ -25,9 +25,9 @@
             Team Name: <%=national.name%><br />
             Location: <=national.location%><br />
             Eliminated?: <%=national.eliminated%><br />
-            Year Founded: <%=national.yrFounded%><br />
+            Year Founded: <%=national.yearFounded%><br />
             World Series Wins: <%=national.wsWins%><br />
-            Image: <img src="<%=national.img%>" />
+           <img src="<%=national.img%>" />
         </section>
         <section>
             <form action="/national/<%=national.id%>?_method=DELETE" method="POST">

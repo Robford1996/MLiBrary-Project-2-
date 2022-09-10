@@ -22,11 +22,11 @@
     </header>
     <main>
         <h2><%=american.name%> Attributes</h2>
-        <form action="/american/<%=american_.id%>?_method=PUT" method="POST">
+        <form action="/american/<%=american._id%>?_method=PUT" method="POST">
             Team Name: <input type="text" name="name" value="<%=american.name%>" /><br />
             Location: <input type="text" name="location" value="<%=american.location%>" /><br />
-            Eliminated?: <input type="checkbox" name="eliminated" value="<%=american.eliminated%>" /><br />
-            Year Founded: <input type="number" name="yrFounded" value="<%=american.yrFounded%>" /><br />
+            Eliminated?: <input type="checkbox" name="eliminated" <% if(american.eliminated === true){ %> checked <% } %>  /><br />
+            Year Founded: <input type="number" name="yearFounded" value="<%=american.yearFounded%>" /><br />
             World Series Wins: <input type="number" name="wsWins" value="<%=american.weWins%>" /><br />
             Image: <input type="text" type="img" value="<%=american.img%>" />
             <input type="submit" value="Submit Changes">

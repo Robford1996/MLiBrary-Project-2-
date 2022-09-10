@@ -25,12 +25,12 @@
             Team Name: <%=american.name%> <br/>
             Location: <%=american.location%> <br />
             Eliminated?: <%=american.eliminated%> <br />
-            Year Founded: <%=american.yrFounded%> <br />
+            Year Founded: <%=american.yearFounded%> <br />
             World Series Wins: <%=american.wsWins%> <br />
-            Image: <img src="<%=american.img%>" />
+           <img src="<%=american.img%>" />
         </section>
         <section>
-            <form action="/american/<%=american.id%>?_method=DELETE" method="POST">
+            <form action="/american/<%=american._id%>?_method=DELETE" method="POST">
                 <input type="submit" value="Delete Team" />
             </form>
         </section>

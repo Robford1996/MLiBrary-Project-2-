@@ -23,9 +23,9 @@
     <main>
         <h2>Teams</h2>
         <ul>
-            <%for(let i=0; americans.length; i++) { %>
-                <li>
-                    <a href="/american/<%=americans[i]._id"><img src="<%=americans[i].img"></a>
+            <%for(let i=0; i< americans.length; i++) { %>
+                <li type="none">
+                    <a href="/american/<%=americans[i]._id%>"><img src="<%=americans[i].img%>"></a>
                 </li>
                 <%}%>
         </ul>
