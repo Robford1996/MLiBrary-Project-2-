@@ -25,6 +25,11 @@ router.delete("/:id", (req, res)=>{
 
 //UPDATE
 router.put("/:id", (req, res)=>{
+  if(req.body.eliminated === "on"){
+    req.body.eliminated = true
+}else{
+    req.body.eliminated = false
+}
   National.findByIdAndUpdate(req.params.id, ()=>{
     res.redirect("/national")
   })
@@ -32,6 +37,11 @@ router.put("/:id", (req, res)=>{
 
 //CREATE
 router.post("/", (req, res)=>{
+  if(req.body.eliminated === "on"){
+    req.body.eliminated = true
+}else{
+    req.body.eliminated = false
+}
   National.create(req.body, (err, createdNational)=>{
     res.redirect("/national")
   })
