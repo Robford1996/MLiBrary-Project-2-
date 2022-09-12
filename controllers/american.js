@@ -4,8 +4,8 @@ const American = require("../models/american.js")
 
 //INDEX
 
-router.get("/", (req, res)=>{
-    American.find({}, (err, foundAmericans)=>{
+router.get("/", (req, res) => {
+    American.find({}, (err, foundAmericans) => {
         res.render("american/index.ejs", {
             americans: foundAmericans
         })
@@ -13,53 +13,53 @@ router.get("/", (req, res)=>{
 })
 
 //NEW
-router.get("/new", (req, res)=>{
+router.get("/new", (req, res) => {
     res.render("american/new.ejs")
 })
 
 //DELETE
-router.delete("/:id", (req, res)=>{
-    American.findByIdAndDelete(req.params.id, (err, data)=>{
+router.delete("/:id", (req, res) => {
+    American.findByIdAndDelete(req.params.id, (err, data) => {
         res.redirect("/american")
     })
 })
 
 //UPDATE
-router.put("/:id", (req, res)=>{
-    if(req.body.eliminated === "on"){
+router.put("/:id", (req, res) => {
+    if (req.body.eliminated === "on") {
         req.body.eliminated = true
-    }else{
+    } else {
         req.body.eliminated = false
     }
-    American.findByIdAndUpdate(req.params.id, req.body, ()=>{
+    American.findByIdAndUpdate(req.params.id, req.body, () => {
         res.redirect("/american")
     })
 })
 
 //CREATE
-router.post("/", (req, res)=>{
-    if (req.body.eliminated === "on"){
+router.post("/", (req, res) => {
+    if (req.body.eliminated === "on") {
         req.body.eliminated = true
-    }else{
+    } else {
         req.body.eliminated = false
     }
-    American.create(req.body, (err, createdAmerican)=>{
+    American.create(req.body, (err, createdAmerican) => {
         res.redirect("/american")
     })
 })
 
 //EDIT
-router.get("/:id/edit", (req, res)=>{
-    American.findById(req.params.id, (error, foundAmerican)=>{
+router.get("/:id/edit", (req, res) => {
+    American.findById(req.params.id, (error, foundAmerican) => {
         res.render("american/edit.ejs", {
             american: foundAmerican
         })
     })
-    })
+})
 
 //SHOW
-router.get("/:id", (req, res)=>{
-    American.findById(req.params.id, (err, foundAmerican)=>{
+router.get("/:id", (req, res) => {
+    American.findById(req.params.id, (err, foundAmerican) => {
         res.render("american/show.ejs", {
             american: foundAmerican
         })
