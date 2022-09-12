@@ -7,12 +7,17 @@ const methodOverride = require("method-override")
 const americanController = require("./controllers/american.js")
 const nationalController = require("./controllers/national.js")
 
+const PORT = process.env.PORT || 3000;
+const MONGODB_URL = process.env.MONGODB_URL;
+
 
 //Middleware
 app.use(express.urlencoded({extended: false}))
 app.use(methodOverride("_method"))
 app.use("/american", americanController)
 app.use("/national", nationalController)
+app.use(express.static('public'));
+app.use(express.json());
 
 mongoose.connect(process.env.DATABASE_URL, {
 	useNewUrlParser: true,
