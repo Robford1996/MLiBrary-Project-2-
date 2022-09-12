@@ -23,7 +23,10 @@ Find various data on any MLB team from location, world series wins, year founded
 
 # Images
 <img width="1427" alt="Screen Shot 2022-09-12 at 7 34 18 PM" src="https://user-images.githubusercontent.com/110005039/189776581-44c0b219-7dbe-47a1-bd68-1d65f33cd35f.png">
+<img src=![Screen Shot 2022-09-12 at 7 34 36 PM](https://user-images.githubusercontent.com/110005039/189776853-be7594d9-586f-4c8c-9da2-7b9ebafe3a27.png)
 <img src="https://user-images.githubusercontent.com/110005039/189776769-c28baa84-f679-49a8-ae4d-a0a7808ab06a.png">
+<img src="https://user-images.githubusercontent.com/110005039/189776887-2d80c725-2fe1-4e4a-9b28-a3917a07e952.png">
+
 
 
 # View the App
