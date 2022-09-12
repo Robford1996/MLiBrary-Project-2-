@@ -11,11 +11,11 @@
         <h1><%=american.name%></h1>
         <nav>
             <ul>
-                <li>
-                    <a href="/">Home</a>
+                <li type="none">
+                    <a href="/"><button>Home</button></a>
                 </li>
-                <li>
-                    <a href="/american">American League Index</a>
+                <li type="none">
+                    <a href="/american"><button>American League Index</button></a>
                 </li>
             </ul>
         </nav>
@@ -35,7 +35,7 @@
             </form>
         </section>
         <section>
-            <a href="/american/<%=american._id%>/edit">Edit</a>
+            <a href="/american/<%=american._id%>/edit"><button>Edit</button></a>
         </section>
     </main>
 </body>
