@@ -20,25 +20,32 @@
             </li>
         </nav>
     </header>
-    <main>
-        <form action="/american" method="POST">
-            Team Name: <input type="text" name="name" /><br />
-            Location: <input type="text" name="location" /><br />
-            Eliminated?: <input type="checkbox" name="eliminated" /><br />
-            Year Founded: <input type="number" name="yearFounded" /><br />
-            World Series Wins: <input type="number" name="wsWins" /><br />
-            Image: <input type="text" name="img" /><br />
-            <input type="submit" value="Add Team">
-        </form>
-    </main>
-    <style>
+    <fieldset>
+
+        <main>
+            <form action="/american" method="POST">
+                Team Name: <input type="text" name="name" /><br />
+                Location: <input type="text" name="location" /><br />
+                Eliminated?: <input type="checkbox" name="eliminated" /><br />
+                Year Founded: <input type="number" name="yearFounded" /><br />
+                World Series Wins: <input type="number" name="wsWins" /><br />
+                Image: <input type="text" name="img" /><br />
+                <input type="submit" value="Add Team">
+            </form>
+        </main>
+        </fieldset>
+        <style>
         body {
             background-image: url("https://media.istockphoto.com/photos/baseball-field-in-outdoor-stadium-with-copy-space-picture-id1143984948?k=20&m=1143984948&s=612x612&w=0&h=3c2Ch6QQ3sm9OcPpnjE7bGg68NWsal9kLiDu8Wm8uQs=");
             background-size: cover;
         }
 
         form {
-            color: aqua;
+            background-color: rgba(0, 0, 0, .5);
+            color: white;
+            background-size: contain;
+            align-items: center;
+            width: fit-content;
         }
 
         h1,
@@ -64,6 +71,9 @@
             border-radius: 4px;
             box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%), 0 1px 2px rgb(0 0 0 / 5%);
             vertical-align: middle;
+        }
+        fieldset{
+            align-items: center;
         }
     </style>
 </body>
