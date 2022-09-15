@@ -21,7 +21,6 @@ Find various data on any MLB team from location, world series wins, year founded
 * Uses Mongoose and MongoDB to deploy and display data 
 
 # Images
-<img src="https://user-images.githubusercontent.com/110005039/190291040-d667daf1-e31a-4fca-958b-0aa0f660e28c.png">
 <img src="https://user-images.githubusercontent.com/110005039/190291081-c5565c80-40b6-4b74-9632-a449a8fc2956.png">
 <img src="https://user-images.githubusercontent.com/110005039/190291111-d282b8c4-1259-4d43-b14a-f39616ab6dcd.png">
 <img src="https://user-images.githubusercontent.com/110005039/190291151-b7b080c6-1d17-447e-8bdf-553e16257243.png">
