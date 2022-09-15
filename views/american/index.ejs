@@ -27,7 +27,7 @@
     </fieldset>
     <fieldset class="main">
 
-        <main>
+        <main class="wrapper">
             <h2>Teams</h2>
             <ul id="main">
                 <%for(let i=0; i< americans.length; i++) { %>
@@ -63,6 +63,10 @@
             flex-direction: row-reverse;
             flex-wrap: wrap;
             align-items: center;
+        }
+
+        main{
+            display: grid;
         }
 
         button {
