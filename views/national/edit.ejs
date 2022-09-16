@@ -29,7 +29,8 @@
             <form action="/national/<%=national._id%>?_method=PUT" method="POST">
                 Team Name: <input type="text" name="name" value="<%=national.name%>" /><br />
                 Location: <input type="text" name="location" value="<%=national.location%>" /><br />
-                Eliminated?: <input type="checkbox" name="eliminated" value="<%=national.eliminated%>" /><br />
+                Eliminated?: <input type="checkbox" name="eliminated" <% if(national.eliminated===true){ %> checked <% } %>
+                /><br />
                 Year Founded: <input type="number" name="yearFounded" value="<%=national.yearFounded%>" /><br />
                 World Series Wins: <input type="number" name="wsWins" value="<%=national.wsWins%>" /><br />
                 Image: <input type="text" name="img" value="<%=national.img%>" /><br />
@@ -48,11 +49,11 @@
             background-size: contain;
             width: fit-content;
         }
-        /* label{
+        label{
             width: 240px;
             display: inline-block;
             text-align: r;
-        } */
+        }
         fieldset{
             align-items: center;
             justify-content: center;

@@ -30,7 +30,7 @@ router.put("/:id", (req, res) => {
   } else {
     req.body.eliminated = false
   }
-  National.findByIdAndUpdate(req.params.id, () => {
+  National.findByIdAndUpdate(req.params.id, req.body, () => {
     res.redirect("/national")
   })
 })
